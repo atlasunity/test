@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+canvas {
+  display: block;
+}
+body {
+  margin: 0;
+}
+#unity-container {
+  width: 100%;
+  height: 100%;
+}
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+  background: #f9f5f3;
+}
+#loading-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#unity-loading-bar {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#unity-logo {
+  text-align: center;
+}
+#unity-logo img {
+  max-width: 80%;
+}
+#unity-progress-bar-empty {
+  width: 80%;
+  height: 24px;
+  margin: 10px 20px 20px 10px;
+  text-align: left;
+  border: 1px solid white;
+  padding: 2px;
+}
+#unity-progress-bar-full {
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+.light #unity-progress-bar-empty {
+  border-color: black;
+}
+.light #unity-progress-bar-full {
+  background: black;
+}
+
+#btn-close {
+  display: none;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 24px;
+  height: 24px;
+  background: url("close-button.png") no-repeat center;
+  background-size: contain;
+  z-index: 2;
+}
+
+#content {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.spinner,
+.spinner:after {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+.spinner {
+  margin: 10px;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  transform: translateZ(0);
+  animation: spinner-spin 1.1s infinite linear;
+}
+@keyframes spinner-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
